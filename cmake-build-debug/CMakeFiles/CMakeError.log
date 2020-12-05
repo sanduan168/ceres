@@ -1,0 +1,105 @@
+Determining if the function sgemm_ exists failed with the following output:
+Change Dir: /home/allen/.cache/bazel/_bazel_allen/e0f912521bdff44b6cb2834a54fc9dda/external/org_ceres_solver_ceres_solver/cmake-build-debug/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make cmTC_e18f6/fast && /usr/bin/make -f CMakeFiles/cmTC_e18f6.dir/build.make CMakeFiles/cmTC_e18f6.dir/build
+make[1]: Entering directory '/home/allen/.cache/bazel/_bazel_allen/e0f912521bdff44b6cb2834a54fc9dda/external/org_ceres_solver_ceres_solver/cmake-build-debug/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_e18f6.dir/CheckFunctionExists.c.o
+/usr/bin/cc   -DCHECK_FUNCTION_EXISTS=sgemm_   -o CMakeFiles/cmTC_e18f6.dir/CheckFunctionExists.c.o   -c /home/allen/software/clion-2019.3.4/bin/cmake/linux/share/cmake-3.15/Modules/CheckFunctionExists.c
+Linking C executable cmTC_e18f6
+/home/allen/software/clion-2019.3.4/bin/cmake/linux/bin/cmake -E cmake_link_script CMakeFiles/cmTC_e18f6.dir/link.txt --verbose=1
+/usr/bin/cc  -DCHECK_FUNCTION_EXISTS=sgemm_    CMakeFiles/cmTC_e18f6.dir/CheckFunctionExists.c.o  -o cmTC_e18f6 
+CMakeFiles/cmTC_e18f6.dir/CheckFunctionExists.c.o: In function `main':
+CheckFunctionExists.c:(.text+0x10): undefined reference to `sgemm_'
+collect2: error: ld returned 1 exit status
+CMakeFiles/cmTC_e18f6.dir/build.make:86: recipe for target 'cmTC_e18f6' failed
+make[1]: *** [cmTC_e18f6] Error 1
+make[1]: Leaving directory '/home/allen/.cache/bazel/_bazel_allen/e0f912521bdff44b6cb2834a54fc9dda/external/org_ceres_solver_ceres_solver/cmake-build-debug/CMakeFiles/CMakeTmp'
+Makefile:121: recipe for target 'cmTC_e18f6/fast' failed
+make: *** [cmTC_e18f6/fast] Error 2
+
+
+
+Performing C SOURCE FILE Test CMAKE_HAVE_LIBC_PTHREAD failed with the following output:
+Change Dir: /home/allen/.cache/bazel/_bazel_allen/e0f912521bdff44b6cb2834a54fc9dda/external/org_ceres_solver_ceres_solver/cmake-build-debug/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make cmTC_49e0a/fast && /usr/bin/make -f CMakeFiles/cmTC_49e0a.dir/build.make CMakeFiles/cmTC_49e0a.dir/build
+make[1]: Entering directory '/home/allen/.cache/bazel/_bazel_allen/e0f912521bdff44b6cb2834a54fc9dda/external/org_ceres_solver_ceres_solver/cmake-build-debug/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_49e0a.dir/src.c.o
+/usr/bin/cc   -DCMAKE_HAVE_LIBC_PTHREAD   -o CMakeFiles/cmTC_49e0a.dir/src.c.o   -c /home/allen/.cache/bazel/_bazel_allen/e0f912521bdff44b6cb2834a54fc9dda/external/org_ceres_solver_ceres_solver/cmake-build-debug/CMakeFiles/CMakeTmp/src.c
+Linking C executable cmTC_49e0a
+/home/allen/software/clion-2019.3.4/bin/cmake/linux/bin/cmake -E cmake_link_script CMakeFiles/cmTC_49e0a.dir/link.txt --verbose=1
+/usr/bin/cc  -DCMAKE_HAVE_LIBC_PTHREAD    CMakeFiles/cmTC_49e0a.dir/src.c.o  -o cmTC_49e0a 
+CMakeFiles/cmTC_49e0a.dir/src.c.o: In function `main':
+src.c:(.text+0x3c): undefined reference to `pthread_create'
+src.c:(.text+0x48): undefined reference to `pthread_detach'
+src.c:(.text+0x59): undefined reference to `pthread_join'
+src.c:(.text+0x6d): undefined reference to `pthread_atfork'
+collect2: error: ld returned 1 exit status
+CMakeFiles/cmTC_49e0a.dir/build.make:86: recipe for target 'cmTC_49e0a' failed
+make[1]: *** [cmTC_49e0a] Error 1
+make[1]: Leaving directory '/home/allen/.cache/bazel/_bazel_allen/e0f912521bdff44b6cb2834a54fc9dda/external/org_ceres_solver_ceres_solver/cmake-build-debug/CMakeFiles/CMakeTmp'
+Makefile:121: recipe for target 'cmTC_49e0a/fast' failed
+make: *** [cmTC_49e0a/fast] Error 2
+
+
+Source file was:
+#include <pthread.h>
+
+void* test_func(void* data)
+{
+  return data;
+}
+
+int main(void)
+{
+  pthread_t thread;
+  pthread_create(&thread, NULL, test_func, NULL);
+  pthread_detach(thread);
+  pthread_join(thread, NULL);
+  pthread_atfork(NULL, NULL, NULL);
+  pthread_exit(NULL);
+
+  return 0;
+}
+
+Determining if the function pthread_create exists in the pthreads failed with the following output:
+Change Dir: /home/allen/.cache/bazel/_bazel_allen/e0f912521bdff44b6cb2834a54fc9dda/external/org_ceres_solver_ceres_solver/cmake-build-debug/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make cmTC_feaf4/fast && /usr/bin/make -f CMakeFiles/cmTC_feaf4.dir/build.make CMakeFiles/cmTC_feaf4.dir/build
+make[1]: Entering directory '/home/allen/.cache/bazel/_bazel_allen/e0f912521bdff44b6cb2834a54fc9dda/external/org_ceres_solver_ceres_solver/cmake-build-debug/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_feaf4.dir/CheckFunctionExists.c.o
+/usr/bin/cc   -DCHECK_FUNCTION_EXISTS=pthread_create   -o CMakeFiles/cmTC_feaf4.dir/CheckFunctionExists.c.o   -c /home/allen/software/clion-2019.3.4/bin/cmake/linux/share/cmake-3.15/Modules/CheckFunctionExists.c
+Linking C executable cmTC_feaf4
+/home/allen/software/clion-2019.3.4/bin/cmake/linux/bin/cmake -E cmake_link_script CMakeFiles/cmTC_feaf4.dir/link.txt --verbose=1
+/usr/bin/cc  -DCHECK_FUNCTION_EXISTS=pthread_create    CMakeFiles/cmTC_feaf4.dir/CheckFunctionExists.c.o  -o cmTC_feaf4 -lpthreads 
+/usr/bin/ld: cannot find -lpthreads
+collect2: error: ld returned 1 exit status
+CMakeFiles/cmTC_feaf4.dir/build.make:86: recipe for target 'cmTC_feaf4' failed
+make[1]: *** [cmTC_feaf4] Error 1
+make[1]: Leaving directory '/home/allen/.cache/bazel/_bazel_allen/e0f912521bdff44b6cb2834a54fc9dda/external/org_ceres_solver_ceres_solver/cmake-build-debug/CMakeFiles/CMakeTmp'
+Makefile:121: recipe for target 'cmTC_feaf4/fast' failed
+make: *** [cmTC_feaf4/fast] Error 2
+
+
+
+Determining if the function cheev_ exists failed with the following output:
+Change Dir: /home/allen/.cache/bazel/_bazel_allen/e0f912521bdff44b6cb2834a54fc9dda/external/org_ceres_solver_ceres_solver/cmake-build-debug/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make cmTC_f7178/fast && /usr/bin/make -f CMakeFiles/cmTC_f7178.dir/build.make CMakeFiles/cmTC_f7178.dir/build
+make[1]: Entering directory '/home/allen/.cache/bazel/_bazel_allen/e0f912521bdff44b6cb2834a54fc9dda/external/org_ceres_solver_ceres_solver/cmake-build-debug/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_f7178.dir/CheckFunctionExists.c.o
+/usr/bin/cc   -DCHECK_FUNCTION_EXISTS=cheev_   -o CMakeFiles/cmTC_f7178.dir/CheckFunctionExists.c.o   -c /home/allen/software/clion-2019.3.4/bin/cmake/linux/share/cmake-3.15/Modules/CheckFunctionExists.c
+Linking C executable cmTC_f7178
+/home/allen/software/clion-2019.3.4/bin/cmake/linux/bin/cmake -E cmake_link_script CMakeFiles/cmTC_f7178.dir/link.txt --verbose=1
+/usr/bin/cc  -DCHECK_FUNCTION_EXISTS=cheev_    CMakeFiles/cmTC_f7178.dir/CheckFunctionExists.c.o  -o cmTC_f7178 /usr/lib/libf77blas.so /usr/lib/libatlas.so 
+CMakeFiles/cmTC_f7178.dir/CheckFunctionExists.c.o: In function `main':
+CheckFunctionExists.c:(.text+0x10): undefined reference to `cheev_'
+collect2: error: ld returned 1 exit status
+CMakeFiles/cmTC_f7178.dir/build.make:88: recipe for target 'cmTC_f7178' failed
+make[1]: *** [cmTC_f7178] Error 1
+make[1]: Leaving directory '/home/allen/.cache/bazel/_bazel_allen/e0f912521bdff44b6cb2834a54fc9dda/external/org_ceres_solver_ceres_solver/cmake-build-debug/CMakeFiles/CMakeTmp'
+Makefile:121: recipe for target 'cmTC_f7178/fast' failed
+make: *** [cmTC_f7178/fast] Error 2
+
+
+
