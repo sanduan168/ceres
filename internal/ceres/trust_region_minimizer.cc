@@ -141,14 +141,12 @@ void TrustRegionMinimizer::MinimizeInterrupt(const Minimizer::Options& options,
     if (!full_graph_optimization_mode_) {
         solver_summary_->message = "Interrupted by main process.";
         solver_summary_->termination_type = FAILURE;
-        std::cout << "stop ceres" << std::endl;
         break;
     }
     iteration_start_time_in_secs_ = WallTimeInSeconds();
     iteration_summary_ = IterationSummary();
     iteration_summary_.iteration =
             solver_summary->iterations.back().iteration + 1;
-    std::cout << "ite: " <<  solver_summary->iterations.back().iteration << std::endl;
 
 
 
